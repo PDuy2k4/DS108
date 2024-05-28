@@ -1,0 +1,9 @@
+fastapi
+pdf2image
+pytesseract
+numpy
+pandas
+pickle
+scikit-learn
+nltk
+uvicorn[standard]
