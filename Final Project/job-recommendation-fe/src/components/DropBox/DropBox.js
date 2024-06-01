@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
-export default function DropBox() {
+export default function DropBox({ jobData, setJobData }) {
   const [dragging, setDragging] = useState(false);
   const [dropped, setDropped] = useState(false);
   const [falseFile, setFalseFile] = useState(false);
@@ -24,11 +24,12 @@ export default function DropBox() {
             "http://127.0.0.1:5000/upload",
             formData
           );
-          const data = response.data;
-          if (data.text === "Failed to extract text") {
+          const data = response.data.text;
+          if (data === "Failed to extract text") {
             setFalseFile(true);
           }
           console.log("File uploaded successfully:", data);
+          setJobData(data);
           setDragging(false);
         } catch (error) {
           setFalseFile(true);

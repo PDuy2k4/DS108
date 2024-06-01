@@ -3,10 +3,13 @@ import Selection from "../components/Selection/Selection";
 import DropBox from "../components/DropBox/DropBox";
 import TechBox from "../components/TechBox/TechBox";
 import axios from "axios";
+import JobList from "../components/Job/JobList";
 export default function Jobpage() {
   const cvRef = useRef();
   const skillsRef = useRef();
   const [techskills, setTechSkills] = useState([]);
+  const [jobDataDrop, setJobDataDrop] = useState([]);
+  const [jobDataBox, setJobDataBox] = useState([]);
   const handleSubmit = async () => {
     if (techskills.length === 0) {
       alert("Please choose at least one skill");
@@ -19,14 +22,14 @@ export default function Jobpage() {
           "http://127.0.0.1:5000/techskills",
           formData
         );
-        console.log(respone.data);
+        setJobDataBox(respone.data.text);
       } catch (error) {
         console.error("Error uploading file:", error);
       }
     }
   };
   return (
-    <div className="h-[1900px]">
+    <div className="min-h-[1900px]">
       <div className="relative pt-[180px]">
         <div className="bg-[#1fc76a] h-[200px] rounded-b-lg pt-[70px] flex flex-col absolute top-0 right-0 left-0 z-[-1]">
           <div className="container">
@@ -64,9 +67,17 @@ export default function Jobpage() {
           <h1 className="text-xl font-semibold leading-normal">
             Recommend Job By Your CV
           </h1>
-          <DropBox></DropBox>
+          <DropBox setJobData={setJobDataDrop} jobData={jobDataDrop}></DropBox>
         </div>
-        <div className="mt-[80px] flex flex-col gap-[20px]" ref={skillsRef}>
+        <div className="mt-[40px]">
+          {jobDataDrop && jobDataDrop.length > 0 && (
+            <JobList data={jobDataDrop}></JobList>
+          )}
+        </div>
+        <div
+          className="mt-[80px] flex flex-col gap-[20px] mb-10"
+          ref={skillsRef}
+        >
           <h1 className="text-xl font-semibold leading-normal">
             Recommend Job By Your IT Skills
           </h1>
@@ -82,6 +93,11 @@ export default function Jobpage() {
               Recommend
             </button>
           </div>
+        </div>
+        <div className="mt-[150px]">
+          {jobDataBox && jobDataBox.length > 0 && (
+            <JobList data={jobDataBox}></JobList>
+          )}
         </div>
       </div>
     </div>

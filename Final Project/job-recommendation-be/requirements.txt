@@ -1,9 +1,11 @@
 fastapi
+pandas
+numpy
 pdf2image
 pytesseract
+pickle
 numpy
 pandas
 pickle
 scikit-learn
-nltk
 uvicorn[standard]

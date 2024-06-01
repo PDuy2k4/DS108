@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./customPagination.scss";
 import styled, { css } from "styled-components";
-export default function JobList() {
+export default function JobList(props) {
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
@@ -18,37 +18,24 @@ export default function JobList() {
     <>
       <Swiper
         loop={true}
-        spaceBetween={50}
+        spaceBetween={20}
         slidesPerView={4}
         modules={[Navigation, Pagination]}
         navigation
         pagination={pagination}
         scrollbar={{ draggable: true }}
       >
-        <SwiperSlide>
-          <Job></Job>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Job></Job>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Job></Job>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Job></Job>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Job></Job>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Job></Job>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Job></Job>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Job></Job>
-        </SwiperSlide>
+        {props.data.map((job, index) => (
+          <SwiperSlide key={index}>
+            <Job
+              job_link={job.job_url}
+              job_title={job.title}
+              location={job.location}
+              img_link={job.image_url}
+              company_name={job.company}
+            ></Job>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

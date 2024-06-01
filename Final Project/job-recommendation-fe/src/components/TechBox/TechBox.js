@@ -68,9 +68,9 @@ export default function TechBox({ techskills, setTechSkills }) {
       maxMenuHeight={200}
       components={{ ...animatedComponents, Option: CustomOption }}
       isMulti
-      closeMenuOnSelect={false}
       options={skills}
       onChange={handleChanges}
+      closeMenuOnSelect={false}
     />
   );
 }

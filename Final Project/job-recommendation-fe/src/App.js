@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Main from "./components/Layout/Main";
 import Jobpage from "./pages/JobPage";
-import DropBox from "./components/DropBox/DropBox";
-import JobList from "./components/Job/JobList";
+// import DropBox from "./components/DropBox/DropBox";
+// import JobList from "./components/Job/JobList";
 
 function App() {
   return (
