@@ -6,6 +6,6 @@ pytesseract
 pickle
 numpy
 pandas
-pickle
+pickle-mixin
 scikit-learn
 uvicorn[standard]
