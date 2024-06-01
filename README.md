@@ -10,14 +10,17 @@
 4. Install `lib` folder from [here](https://drive.google.com/drive/folders/1qOjldgoIWBpBj8kWrQcDIJcx3l2WlHbI?usp=drive_link)
 
 5. Unzip and put the `lib` folder into the `job-recommendation-be` folder :
-   📂job-recommendation-be
-   ┣ 📂**lib**
-   ┣ 📂\_\_pycache\_\_
-   ┣ 📂Data
-   ┣ 📂ML_models
-   ┣ 📂uploads
-   ┣ 📜main.py
-   ┗ 📜requirements.txt
+
+```bash
+📂job-recommendation-be
+┣ 📂lib
+┣ 📂__pycache__
+┣ 📂Data
+┣ 📂ML_models
+┣ 📂uploads
+┣ 📜main.py
+┗ 📜requirements.txt
+```
 
 6. Right click on the `job-recommendation-be` folder and click `Open in  Intergrated Terminal` and run:
 
