@@ -25,7 +25,7 @@
 6. Right click on the `job-recommendation-be` folder and click `Open in  Intergrated Terminal` and run:
 
    ```pyton
-       uvicorn main:app --reload --port=5000
+       uvicorn main:app --host 127.0.0.1 --port 5000
    ```
 
    **Note**: If you see the following sentences in the terminal, you get a success:
