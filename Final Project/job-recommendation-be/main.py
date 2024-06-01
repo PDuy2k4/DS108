@@ -39,7 +39,7 @@ def prediction(text):
     cv_model=pickle.load(open('./ML_models/cv_model.pkl','rb'))
 
     pl_model=pickle.load(open('./ML_models/pl_model.pkl','rb'))
-    text_transformed=cv_model.transform([text])
+    text_transformed=cv_model.transform([text]).toarray()
     idx_pred=pl_model.predict(text_transformed)[0]
     data_res=data[data['cluster']==idx_pred][['title','company','location','image_url','job_url','technical_skill']].reset_index(drop=True)
     nearest_jobs=[]
