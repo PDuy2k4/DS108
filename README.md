@@ -3,7 +3,7 @@
 ## STEPS TO RUN FINAL PROJECT :
 
 1. Clone the repository
-2. Install NodeJS from [here](https://nodejs.org/en)
+2. Install NodeJS from [here](https://nodejs.org/en) and install Python from [here](https://www.python.org/getit/)
 3. Install the requirements in the requirements.txt file
    `cd FinalProject/job-recommendation-be/`
    `pip install -r requirements.txt`
@@ -22,7 +22,7 @@
 ┗ 📜requirements.txt
 ```
 
-6. Right click on the `job-recommendation-be` folder and click `Open in  Intergrated Terminal` and run:
+6. Right click on the `job-recommendation-be` in VSCode folder and click `Open in  Intergrated Terminal` and run:
 
    ```pyton
        uvicorn main:app --host 127.0.0.1 --port 5000
@@ -39,7 +39,7 @@
        INFO:     Uvicorn running on http://127.0.0.1:5000 (Press CTRL+C to quit)
    ```
 
-7.Right click on the `job-recommendation-fe` folder and click `Open in  Intergrated Terminal` and run:
+7.Right click on the `job-recommendation-fe` in VSCode folder and click `Open in  Intergrated Terminal` and run:
 
 ```bash
     npm i
